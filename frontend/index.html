@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SchemeWise AI | Government Scheme Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="SchemeWise AI home">
+      <span class="brand-mark">✦</span>
+      <span>SchemeWise <b>AI</b><small>YOUR BENEFITS, SIMPLIFIED</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav id="mainNav">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#explore">Explore schemes</a>
+      <a class="nav-link" href="#how-it-works">How it works</a>
+      <button class="nav-cta" id="navCheck">Check eligibility <span>↗</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="sparkle">✦</span> SMARTER ACCESS TO PUBLIC BENEFITS</div>
+        <h1>Find the support<br>that's <span>meant for you.</span></h1>
+        <p class="hero-description">Discover government schemes that match your needs. Answer a few simple questions and get a personalized shortlist in minutes.</p>
+        <div class="hero-actions">
+          <button class="button button-primary" id="heroCheck">Find my schemes <span>→</span></button>
+          <a class="button button-secondary" href="#explore">Explore schemes <span>↘</span></a>
+        </div>
+        <div class="trust-row">
+          <div class="avatar-stack" aria-hidden="true"><span>👩🏽</span><span>👨🏽</span><span>👩🏻</span></div>
+          <div><strong>Benefits made easier</strong><small>Clear guidance. Better access.</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="decor decor-one"></div><div class="decor decor-two"></div>
+        <div class="visual-label"><span class="pulse"></span> PERSONALIZED DISCOVERY</div>
+        <div class="people-illustration">
+          <div class="sun"></div>
+          <div class="person person-student"><div class="head"></div><div class="body"></div><div class="book">▤</div></div>
+          <div class="person person-farmer"><div class="head"></div><div class="hat"></div><div class="body"></div><div class="plant">♣</div></div>
+          <div class="person person-founder"><div class="head"></div><div class="hair"></div><div class="body"></div><div class="laptop">⌨</div></div>
+          <div class="ground"></div>
+        </div>
+        <div class="floating-card match-card"><span class="mini-icon">✦</span><div><small>YOUR MATCH SCORE</small><strong>92% <em>match</em></strong></div><span class="match-check">✓</span></div>
+        <div class="floating-card scheme-float"><span class="float-icon">🎓</span><div><strong>Scholarship support</strong><small>Potential match found</small></div><span class="float-arrow">↗</span></div>
+        <div class="hero-note"><span>✦</span> A clearer path to the benefits you deserve.</div>
+      </div>
+    </section>
+
+    <section class="stats section-wrap" aria-label="Platform highlights">
+      <div class="stat"><span class="stat-icon">▦</span><div><strong>One simple place</strong><small>Explore schemes by need</small></div></div>
+      <div class="stat"><span class="stat-icon teal">◎</span><div><strong>Personalized matches</strong><small>Based on your profile</small></div></div>
+      <div class="stat"><span class="stat-icon orange">↗</span><div><strong>Easy-to-follow guidance</strong><small>Know what to check next</small></div></div>
+    </section>
+
+    <section class="categories section-wrap" id="explore">
+      <div class="section-heading">
+        <div><div class="eyebrow">EXPLORE YOUR OPTIONS</div><h2>Support for every stage of life.</h2><p>Start with the area that matters most to you.</p></div>
+        <a href="#scheme-list" class="text-link">Browse all schemes <span>→</span></a>
+      </div>
+      <div class="category-grid" id="categoryGrid">
+        <button class="category-card selected" data-category="All"><span class="category-icon purple">✦</span><strong>All schemes</strong><small>See every category</small><span class="card-arrow">↗</span></button>
+        <button class="category-card" data-category="Education"><span class="category-icon blue">▤</span><strong>Education</strong><small>Scholarships & learning</small><span class="card-arrow">↗</span></button>
+        <button class="category-card" data-category="Agriculture"><span class="category-icon green">♧</span><strong>Agriculture</strong><small>Support for farmers</small><span class="card-arrow">↗</span></button>
+        <button class="category-card" data-category="Business"><span class="category-icon orange">↗</span><strong>Business</strong><small>Grow your enterprise</small><span class="card-arrow">↗</span></button>
+        <button class="category-card" data-category="Women & Child"><span class="category-icon pink">♡</span><strong>Women & child</strong><small>Family-focused support</small><span class="card-arrow">↗</span></button>
+        <button class="category-card" data-category="Housing"><span class="category-icon yellow">⌂</span><strong>Housing</strong><small>Home & essentials</small><span class="card-arrow">↗</span></button>
+      </div>
+    </section>
+
+    <section class="scheme-section section-wrap" id="scheme-list">
+      <div class="section-heading scheme-heading">
+        <div><div class="eyebrow">DISCOVER OPPORTUNITIES</div><h2>Popular scheme guides</h2><p>Explore a few example listings to get started.</p></div>
+        <label class="search-box"><span>⌕</span><input type="search" id="schemeSearch" placeholder="Search schemes..." aria-label="Search schemes"></label>
+      </div>
+      <div class="scheme-grid" id="schemeGrid"></div>
+      <p class="disclaimer">These are illustrative scheme guides. Verify current eligibility, benefits, dates, and application details on the official government portal before applying.</p>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-wrap how-inner">
+        <div class="section-heading"><div><div class="eyebrow">A SIMPLE THREE-STEP JOURNEY</div><h2>From questions to next steps.</h2><p>No complicated search required.</p></div></div>
+        <div class="steps">
+          <article class="step"><span class="step-number">01</span><div class="step-icon">♙</div><h3>Tell us about you</h3><p>Share a few details about your age, location, and goals.</p></article>
+          <article class="step"><span class="step-number">02</span><div class="step-icon">✦</div><h3>Find relevant schemes</h3><p>The demo matches your answers against basic eligibility rules.</p></article>
+          <article class="step"><span class="step-number">03</span><div class="step-icon">↗</div><h3>Explore your next step</h3><p>Review the guide and verify details with the official source.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta section-wrap">
+      <div class="cta-spark">✦</div><div><div class="eyebrow">YOUR NEXT STEP STARTS HERE</div><h2>Let's find what you may qualify for.</h2><p>A few details can help narrow down the options.</p></div>
+      <button class="button button-light" id="bottomCheck">Check my eligibility <span>→</span></button>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">✦</span><span>SchemeWise <b>AI</b><small>YOUR BENEFITS, SIMPLIFIED</small></span></a><p>Student project prototype · Not an official government website</p><a href="#home" class="back-top">Back to top ↑</a></footer>
+
+  <div class="modal-backdrop" id="eligibilityModal" aria-hidden="true">
+    <section class="eligibility-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close eligibility checker">×</button>
+      <div class="modal-eyebrow">PERSONALIZED SCHEME FINDER</div>
+      <h2 id="modalTitle">Let's find your matches.</h2>
+      <p class="modal-intro">Tell us a little about your situation. This demo runs in your browser and doesn't send your answers to a server.</p>
+      <form id="eligibilityForm">
+        <div class="form-grid">
+          <label>Age <span>*</span><input type="number" id="age" min="1" max="120" placeholder="e.g. 20" required></label>
+          <label>State / UT <span>*</span><select id="state" required><option value="">Choose your state</option><option>Tamil Nadu</option><option>Kerala</option><option>Karnataka</option><option>Andhra Pradesh</option><option>Telangana</option><option>Maharashtra</option><option>Delhi</option><option>Other</option></select></label>
+          <label>Annual family income <span>*</span><select id="income" required><option value="">Choose income range</option><option value="100000">Below ₹1 lakh</option><option value="250000">₹1–2.5 lakh</option><option value="500000">₹2.5–5 lakh</option><option value="1000000">Above ₹5 lakh</option></select></label>
+          <label>What best describes you? <span>*</span><select id="occupation" required><option value="">Choose one</option><option value="student">Student</option><option value="farmer">Farmer</option><option value="entrepreneur">Entrepreneur / business owner</option><option value="woman">Woman / parent</option><option value="jobseeker">Job seeker</option><option value="other">Other</option></select></label>
+          <label class="full-field">What kind of support are you looking for?<select id="need"><option value="All">Any relevant support</option><option value="Education">Education / scholarship</option><option value="Agriculture">Agriculture</option><option value="Business">Business / startup</option><option value="Women & Child">Women & child</option><option value="Housing">Housing</option></select></label>
+        </div>
+        <label class="consent"><input type="checkbox" id="consent" required> <span>I understand this is an educational demo and matches are not an official eligibility decision.</span></label>
+        <button class="button button-primary submit-button" type="submit">Find my matches <span>→</span></button>
+      </form>
+      <div id="matchResults" class="match-results" hidden></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

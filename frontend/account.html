@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Account | SchemeWise AI</title><link rel="stylesheet" href="style.css"><style>
+.account-wrap{width:min(480px,90%);margin:65px auto;background:#fff;border:1px solid #e8eaf2;border-radius:20px;padding:32px;box-shadow:0 18px 55px #272b5c0e}.account-wrap h1{font-size:30px;margin:16px 0}.account-wrap p{font-size:13px;color:#6d7890;line-height:1.7}.account-wrap label{display:block;font-size:12px;font-weight:700;margin:15px 0}.account-wrap input,.account-wrap select{display:block;width:100%;margin-top:8px;border:1px solid #e4e6ef;border-radius:9px;height:43px;padding:0 12px}.account-wrap .button{width:100%;margin-top:10px}.switcher{display:flex;gap:8px;margin:18px 0}.switcher button{flex:1;padding:10px;border:1px solid #e8eaf2;border-radius:9px;background:#fff}.switcher button.active{background:#f0efff;color:#5144d5;border-color:#c8c2ff}.message{font-size:12px!important;margin-top:14px}.small-link{font-size:12px;color:#6558e8}
+</style></head><body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">✦</span><span>SchemeWise <b>AI</b><small>YOUR BENEFITS, SIMPLIFIED</small></span></a><a class="small-link" href="index.html">← Back to home</a></header>
+<main class="account-wrap"><div class="eyebrow">YOUR PERSONAL SPACE</div><h1 id="heading">Welcome back.</h1><p>Sign in to save scheme guides and keep your recommendations in one place.</p>
+<div class="switcher"><button id="loginTab" class="active" type="button">Login</button><button id="registerTab" type="button">Create account</button></div>
+<form id="accountForm"><div id="nameField" hidden><label>Full name<input id="fullName" autocomplete="name"></label></div>
+<label>Email<input id="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+<label>Password<input id="password" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters"></label>
+<button class="button button-primary" type="submit" id="submitBtn">Login →</button></form><p class="message" id="message" role="status"></p></main>
+<script src="api.js"></script><script>
+let mode="login";const $=id=>document.getElementById(id);
+function setMode(next){mode=next;$("loginTab").classList.toggle("active",mode==="login");$("registerTab").classList.toggle("active",mode==="register");$("nameField").hidden=mode!=="register";$("fullName").required=mode==="register";$("heading").textContent=mode==="login"?"Welcome back.":"Create your account."; $("submitBtn").textContent=mode==="login"?"Login →":"Create account →";$("message").textContent="";}
+$("loginTab").onclick=()=>setMode("login");$("registerTab").onclick=()=>setMode("register");
+$("accountForm").onsubmit=async e=>{e.preventDefault();$("submitBtn").disabled=true;$("message").textContent="Please wait…";try{const data=mode==="login"?await SchemeAPI.login({email:$("email").value,password:$("password").value}):await SchemeAPI.register({name:$("fullName").value,email:$("email").value,password:$("password").value});localStorage.setItem("schemeToken",data.token);localStorage.setItem("schemeUser",JSON.stringify(data.user));$("message").textContent="Success! You are signed in.";setTimeout(()=>location.href="index.html",650);}catch(err){$("message").textContent=err.message+" — make sure the backend is running.";}finally{$("submitBtn").disabled=false;}};
+</script></body></html>

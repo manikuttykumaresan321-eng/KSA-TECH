@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: scheme-ai-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: scheme_ai
+      MYSQL_USER: schemeuser
+      MYSQL_PASSWORD: schemepass
+      MYSQL_ROOT_PASSWORD: rootpass_change_me
+    ports:
+      - "3306:3306"
+    volumes:
+      - scheme_ai_data:/var/lib/mysql
+volumes:
+  scheme_ai_data:
